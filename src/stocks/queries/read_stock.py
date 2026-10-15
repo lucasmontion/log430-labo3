@@ -38,6 +38,8 @@ def get_stock_for_all_products():
             'Nom du produit': row.name,
             'Prix unitaire': row.price,
             'Unités en stock': int(row.quantity),
+            'Valeur totale du stock': float(row.price) * int(row.quantity),
+            'Stock faible': True if row.quantity < 10 else False
         })
     
     return stock_data
